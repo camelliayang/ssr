@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Index from './container/Index'
+import About from './container/About'
+import User from './container/User'
+import Notfound from './container/Notfound'
+// import './App.css'
+// export default (
+//   <div>
+//     <Route path="/" exact component={Index}></Route>
+//     <Route path="/about" exact component={About}></Route>
+//   </div>
+// )
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default [
+  {
+    path:"/",
+    component:Index,
+    // loadData:Index.loadData,
+    exact:true,
+    key:'index',
+    // 嵌套路由
+    // routes:[{
 
-export default App;
+    // }]
+  },
+  {
+    path:"/about",
+    component:About,
+    exact:true,
+    key:'about'
+  },
+  {
+    path:"/user",
+    component:User,
+    exact:true,
+    key:'user'
+  },
+  {
+    component:Notfound
+  }
+]
